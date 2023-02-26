@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
-import 'package:epics_project/login.dart';
+import 'package:epics_project/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
 
-import 'homapage.dart';
+import '../screens/homapage.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
