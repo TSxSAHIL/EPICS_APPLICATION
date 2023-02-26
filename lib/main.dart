@@ -5,6 +5,7 @@ import 'login.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: const LoginPage(),
     routes: {
       'login': (context) => const LoginPage(),

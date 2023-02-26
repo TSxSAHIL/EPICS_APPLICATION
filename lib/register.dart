@@ -1,7 +1,12 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
+import 'package:epics_project/login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+
+
+import 'homapage.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -200,7 +205,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 Center(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const LoginPage()),
+                          );
+                    },
                     child: Container(
                       height: 54,
                       width: 229,
