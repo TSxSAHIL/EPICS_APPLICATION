@@ -40,6 +40,11 @@ dependencies:
   line_icons: ^2.0.1
   text_to_speech: ^0.2.3
   flutter_tts: ^3.6.3
+  dio: ^5.0.1
+  lottie: ^2.2.0
+  table_calendar: ^3.0.9
+  rating_dialog: ^2.0.4
+  shared_preferences: ^2.0.18
 
 
 dev_dependencies:

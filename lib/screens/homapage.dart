@@ -1,77 +1,141 @@
-import 'package:epics_project/screens/doctors.dart';
+import 'package:epics_project/components/appointment_card.dart';
+import 'package:epics_project/components/doctor_card.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'texttospeech.dart';
+import '../utils/config.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-
-  static const List<Widget> _widgetOptions = <Widget>[    Text('Home Page'),    TextToSpeech(),    DoctorsPage(),  ];
-
+  List<Map<String, dynamic>> medCat = [
+    {
+      "icon": FontAwesomeIcons.userDoctor,
+      "category": "ADD / ADHD",
+    },
+    {
+      "icon": FontAwesomeIcons.brain,
+      "category": "Decoding Difficulties",
+    },
+    {
+      "icon": FontAwesomeIcons.book,
+      "category": "Learning Difficulties",
+    },
+    {
+      "icon": FontAwesomeIcons.readme,
+      "category": "Reading Difficulties",
+    },
+  ];
   @override
   Widget build(BuildContext context) {
+    Config().init(context);
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        actions: const [
-          SizedBox(
-            width: 10,
-          )
-        ],
-        title: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text('Read Ease'),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 15,
+          vertical: 15,
         ),
-      ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            boxShadow: const [
-              BoxShadow(
-                blurRadius: 20,
-                color: Colors.black12,
+        child: SafeArea(
+            child: SingleChildScrollView(
+              child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    'Mehak',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/profile.jpg'),
+                    ),
+                  )
+                ],
+              ),
+              Config.spaceMedium,
+              const Text(
+                'Category',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Config.spaceSmall,
+              SizedBox(
+                height: Config.heightSize * 0.05,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: List.generate(medCat.length, (index) {
+                    return Card(
+                      margin: const EdgeInsets.only(right: 20),
+                      color: Config.primaryColor,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            FaIcon(
+                              medCat[index]['icon'],
+                              color: Colors.white,
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              medCat[index]['category'],
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }),
+                ),
+              ),
+              Config.spaceSmall,
+              const Text(
+                'Appointments Today',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Config.spaceSmall,
+              const AppointmentCard(),
+              Config.spaceSmall,
+              const Text(
+                'Top Doctors',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Config.spaceSmall,
+              Column(
+                children: List.generate(10, (index) {
+                  return DoctorCard();
+                }),
               )
-            ],
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: SafeArea(
-            child: GNav(
-              selectedIndex: _selectedIndex,
-              onTabChange: (index) {
-                setState(() {
-                  _selectedIndex = index;
-                });
-              },
-              tabs: const [
-                GButton(
-                  icon: Icons.home,
-                  text: 'Home',
-                ),
-                GButton(
-                  icon: Icons.chat_bubble,
-                  text: 'Text to Speech',
-                ),
-                GButton(
-                  icon: Icons.people,
-                  text: 'Doctors',
-                ),
-              ],
-            ),
-          ),
-        ),
+                      ],
+                    ),
+            )),
       ),
     );
   }

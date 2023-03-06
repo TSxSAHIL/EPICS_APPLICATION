@@ -1,5 +1,8 @@
+// ignore_for_file: unused_import
+
 import 'package:epics_project/screens/homapage.dart';
 import 'package:epics_project/login/register.dart';
+import 'package:epics_project/screens/main_layout.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -92,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const HomePage()),
+                                builder: (context) => const MainLayout()),
                           );
                       },
                       child: Container(
