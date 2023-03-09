@@ -1,6 +1,9 @@
 import 'package:epics_project/screens/appointment.dart';
+import 'package:epics_project/screens/booking_page.dart';
+import 'package:epics_project/screens/doctor_details.dart';
 import 'package:epics_project/screens/homapage.dart';
 import 'package:epics_project/login/register.dart';
+import 'package:epics_project/screens/success.dart';
 import 'package:epics_project/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'login/login.dart';
@@ -35,6 +38,9 @@ void main() {
       'register': (context) => const RegisterPage(),
       'homepage' :(context) => const HomePage(),
       'appointment' :(context) => const AppointmentPage(),
+      'doc_details' :(context) => const DoctorDetails(),
+      'booking_page' :(context) => const BookingPage(),
+      'successbooked' :(context) => const AppointmentBooked(),
     },
   ));
 }
