@@ -9,6 +9,7 @@ import '../components/customized_app_bar.dart';
 
 class BookingPage extends StatefulWidget {
   const BookingPage({super.key});
+  
   @override
   State<BookingPage> createState() => _BookingPageState();
 }
