@@ -6,7 +6,6 @@ class LoginApi {
   static Future<String?> login(String username, String password) async {
     const baseUrl = 'https://example.com/api';
     final url = Uri.parse('$baseUrl/login');
-
     final response = await http.post(
       url,
       body: {
