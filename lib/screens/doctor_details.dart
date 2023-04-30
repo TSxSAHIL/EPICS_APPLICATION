@@ -113,7 +113,6 @@ class AboutDoctor extends StatelessWidget {
     );
   }
 }
-
 class DetailsBody extends StatelessWidget {
   const DetailsBody({super.key});
 
