@@ -105,6 +105,7 @@ class AboutDoctor extends StatelessWidget {
                   fontWeight: FontWeight.bold),
               softWrap: true,
               textAlign: TextAlign.center,
+              
             ),
           )
         ],

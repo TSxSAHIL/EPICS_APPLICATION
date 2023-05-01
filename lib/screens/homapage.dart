@@ -35,7 +35,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     Config().init(context);
     return Scaffold(
-      body: Padding(
+      body: 
+      Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 15,
           vertical: 15,

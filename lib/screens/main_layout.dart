@@ -1,3 +1,4 @@
+// ignore_for_file: unused_import, duplicate_import
 import 'package:epics_project/screens/appointment.dart';
 import 'package:epics_project/screens/homapage.dart';
 import 'package:epics_project/screens/texttospeech.dart';

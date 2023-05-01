@@ -45,6 +45,7 @@ dependencies:
   table_calendar: ^3.0.9
   rating_dialog: ^2.0.4
   shared_preferences: ^2.0.18
+  http: ^0.13.6
 
 
 dev_dependencies:
