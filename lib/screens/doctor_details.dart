@@ -105,7 +105,7 @@ class AboutDoctor extends StatelessWidget {
                   fontWeight: FontWeight.bold),
               softWrap: true,
               textAlign: TextAlign.center,
-              
+
             ),
           )
         ],
@@ -113,7 +113,6 @@ class AboutDoctor extends StatelessWidget {
     );
   }
 }
-
 class DetailsBody extends StatelessWidget {
   const DetailsBody({super.key});
 
