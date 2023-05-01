@@ -14,7 +14,6 @@ class LoginApi {
         'password': password,
       },
     );
-
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
       final token = data['token'] as String?;
