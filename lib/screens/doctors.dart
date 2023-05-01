@@ -8,7 +8,6 @@ class DoctorsPage extends StatefulWidget {
   @override
   State<DoctorsPage> createState() => _DoctorsPageState();
 }
-
 class _DoctorsPageState extends State<DoctorsPage> {
   @override
   Widget build(BuildContext context) {
